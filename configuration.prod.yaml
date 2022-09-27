@@ -23,7 +23,7 @@ diagnostics:
      loggerId: "/subscriptions/28296629-48b9-4b8c-81f1-35c3ca4fed0a/resourceGroups/apiops-prd-rg/providers/microsoft.insights/components/apim-prod-insights"
        
 apis:
-  - name: " ['test','swagger-petstore-openapi-3-0'] "
+  - name: " ['StageNext Conference API','Swagger Petstore - OpenAPI 3.0'] "
     diagnostics:
       - name: applicationinsights
         verbosity: Error
