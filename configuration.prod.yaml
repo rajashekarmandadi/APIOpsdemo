@@ -1,20 +1,18 @@
-apimServiceName: [your target environment apim instance name goes here]
+apimServiceName: apiopsprod
 namedValues:
   - name: [name goes here. e.g. environment or SearchEngineBackendURL. It doesn't have to exist in the target environment]
     displayName: [display name  goes here]
-    value: [replacement value in the target environment. e.g. name value can be dev in dev environment and prod in the prod environment]
-  - name: mynamedvalue
-    displayName: mynamedvalue
+    value: prod
+  - name: apiopsvalue
+    displayName: apippsvalue
     keyVault:
       identityClientId: Set if Key Vault authentication happens through a user-assigned managed identity
       secretIdentifier: Url for key vault secret (can be versioned if needed).
 loggers:
-    - name: [source environment app insight name goes here. e.g. apim-dev-insights]
+    - name: apiops-dev-insights
       loggerType: applicationInsights
-      description: [app insight description goes here]
-      resourceId: "/subscriptions/[Azure subscription id for the target environment goes here]/resourceGroups/
-                   [resource group name for the target environment goes here]/providers/microsoft.insights/components/
-                   [target environment app insight name goes here. e.g. apim-prod-insights]"
+      description: apiopsapplicationinsights
+      resourceId: "/subscriptions/28296629-48b9-4b8c-81f1-35c3ca4fed0a/resourceGroups/apiops-prd-rg/providers/microsoft.insights/components/apim-prod-insights"
       credentials:
         instrumentationKey: "destination environment namevalue key for the application insights goes here. You can use the display name to avoid hard coding the key here e.g. {{Logger-Credentials--62390d98217d201158b4bfb3}}. 
                              The assumption is that the namevalue key is already populated in the target environment. This happens automatically when you associate an application insight to your target apim instance"
@@ -22,16 +20,14 @@ loggers:
 diagnostics:
    - name: applicationinsights
      verbosity: Error
-     loggerId: "/subscriptions/[Azure subscription id for the target environment goes here]/resourceGroups/[resource group name for the target environment goes here]
+     loggerId: "/subscriptions/28296629-48b9-4b8c-81f1-35c3ca4fed0a/resourceGroups/apiops-prd-rg/providers/microsoft.insights/components/apim-prod-insights"
         /providers/Microsoft.ApiManagement/service/[apim instance name for the target environment goes here]/loggers/[target environment app insight name goes here. e.g. apim-prod-insights]"
 apis:
-  - name: "[target api version & revision to apply application insights to e.g. 'my-api', 'my-api-v2', 'my-api-v2;rev=2']"
+  - name: " 'test' "
     diagnostics:
       - name: applicationinsights
         verbosity: Error
-        loggerId: "/subscriptions/[Azure subscription id for the target environment goes here]/resourceGroups/[resource group name for the target environment goes here]
-        /providers/Microsoft.ApiManagement/service/[apim instance name for the target environment goes here]/loggers/[target environment app insight name goes here. e.g. apim-prod-insights]"
-        
+        loggerId: "/subscriptions/28296629-48b9-4b8c-81f1-35c3ca4fed0a/resourceGroups/apiops-prd-rg/providers/microsoft.insights/components/apim-prod-insights"     
 
 
 
