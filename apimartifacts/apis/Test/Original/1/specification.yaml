@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: Test
-  description: ''
+  description: 'Test'
   version: '1.0'
 servers:
   - url: https://apiopsdev.azure-api.net
