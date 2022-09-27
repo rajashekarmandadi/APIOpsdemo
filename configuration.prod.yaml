@@ -1,7 +1,7 @@
 apimServiceName: apiopsprod
 namedValues:
-  - name: [name goes here. e.g. environment or SearchEngineBackendURL. It doesn't have to exist in the target environment]
-    displayName: [display name  goes here]
+  - name: environment
+    displayName: apiopsprod
     value: prod
   - name: apiopsvalue
     displayName: apippsvalue
