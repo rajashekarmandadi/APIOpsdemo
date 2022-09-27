@@ -3,7 +3,7 @@ namedValues:
   - name: environment
     displayName: apiopsprod
     value: prod
-  - name: apiopsvalue
+  - name: apiops
     displayName: apippsvalue
     keyVault:
       identityClientId: Set if Key Vault authentication happens through a user-assigned managed identity
