@@ -16,7 +16,7 @@ loggers:
       credentials:
         instrumentationKey: "destination environment namevalue key for the application insights goes here. You can use the display name to avoid hard coding the key here e.g. {{Logger-Credentials--62390d98217d201158b4bfb3}}. 
                              The assumption is that the namevalue key is already populated in the target environment. This happens automatically when you associate an application insight to your target apim instance"
-      isBuffered: true
+      isBuffered: false
 diagnostics:
    - name: applicationinsights
      verbosity: Error
